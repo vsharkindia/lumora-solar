@@ -1,26 +1,57 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Lumora Solar brand: warm sun amber on deep night-sky navy. */
+@theme {
+  --color-sun-50: #fff8eb;
+  --color-sun-100: #ffecc6;
+  --color-sun-200: #ffd888;
+  --color-sun-300: #ffbf4a;
+  --color-sun-400: #ffa620;
+  --color-sun-500: #f98507;
+  --color-sun-600: #dd6002;
+  --color-sun-700: #b74006;
+  --color-night-50: #f3f6fb;
+  --color-night-100: #e4eaf4;
+  --color-night-200: #c9d4e6;
+  --color-night-300: #9eb0cf;
+  --color-night-400: #6c83ab;
+  --color-night-500: #4a628c;
+  --color-night-600: #374b72;
+  --color-night-700: #2c3c5c;
+  --color-night-800: #1d2840;
+  --color-night-900: #121a2d;
+  --color-night-950: #0a0f1d;
+  --color-leaf-500: #16a34a;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-spin-slow: spin 40s linear infinite;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+html { scroll-behavior: smooth; }
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: var(--color-night-900);
+  -webkit-font-smoothing: antialiased;
 }
+h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; }
+
+/* Scroll-reveal (see components/Reveal.tsx) */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.is-visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .animate-float, .animate-spin-slow { animation: none !important; }
+}
+
+/* Range input (savings calculator) */
+input[type="range"] { accent-color: var(--color-sun-500); }
+
+details > summary { list-style: none; }
+details > summary::-webkit-details-marker { display: none; }
