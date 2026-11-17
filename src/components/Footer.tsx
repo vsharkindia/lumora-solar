@@ -40,9 +40,7 @@ export function Footer() {
           <p>© {new Date().getFullYear()} {site.name}. All rights reserved.</p>
           <p>
             Portfolio demo: Lumora Solar is a fictional company. Website designed &amp; built by{" "}
-            <a href="https://www.vsharksolutions.com" className="font-medium text-sun-300 hover:text-sun-200" target="_blank" rel="noreferrer">
-              VShark Solutions
-            </a>
+            <span className="font-medium text-sun-300">VShark Solutions</span>
             .
           </p>
         </div>

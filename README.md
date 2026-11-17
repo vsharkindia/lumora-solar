@@ -3,7 +3,7 @@
 **▶ Live site: https://vsharkindia.github.io/lumora-solar/**
 
 A fast, responsive marketing website for **Lumora Solar**, a *fictional* rooftop-solar installer,
-designed and built by [VShark Solutions](https://www.vsharksolutions.com) as a portfolio piece.
+designed and built by VShark Solutions as a portfolio piece.
 
 ## Highlights
 
